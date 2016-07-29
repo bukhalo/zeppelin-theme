@@ -1,3 +1,6 @@
+$( document ).ready(function() {
+
+});
 if (window.jQuery) {
     $(window).load(function(){
         if (window.devicePixelRatio > 1) {

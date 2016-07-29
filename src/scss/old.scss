@@ -3,22 +3,6 @@
 /* Circle Theme version 2.1.0, Copyright (C) 2011 - 2016 Kirill Bezrukov www.redminecrm.com */
 
 /**********************************************************/
-/* LOGO */
-/**********************************************************/
-
-#header > h1 {
-  background: url(../images/logo.png) no-repeat 20px 13px;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min-device-pixel-ratio: 2) {
-  #header > h1 {
-    background-image: url(../images/logo2x.png);
-    background-size: 38px 40px;
-  }
-}
-
-/**********************************************************/
 /* COMMON */
 /**********************************************************/
 
@@ -140,9 +124,9 @@ img.gravatar {
 /* TOP-MENU */
 /**********************************************************/
 #top-menu {
-  background: #000;
   padding: 7px 20px 2px 25px;
   font-size: 0.9em;
+  background: #000;
 }
 
 #top-menu a {
