@@ -4,7 +4,7 @@ var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 
 gulp.task('styles', function() {
-    gulp.src(['src/scss/**/*.scss'])
+    gulp.src(['src/scss/index.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('application.css'))
         .pipe(gulp.dest('stylesheets'))
