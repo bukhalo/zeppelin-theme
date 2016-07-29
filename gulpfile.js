@@ -24,6 +24,7 @@ gulp.task('livereload', ['styles', 'scripts'], function() {
     });
 
     gulp.watch('src/scss/*.scss', ['styles']);
+    gulp.watch('src/js/*.js').on('change', browserSync.reload);
 });
 
 gulp.task('default', ['livereload'], function() {
