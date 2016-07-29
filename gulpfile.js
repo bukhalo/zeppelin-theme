@@ -4,7 +4,7 @@ var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 
 gulp.task('styles', function() {
-    gulp.src(['src/scss/*.scss'])
+    gulp.src(['src/scss/**/*.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('application.css'))
         .pipe(gulp.dest('stylesheets'))
@@ -12,7 +12,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-    gulp.src(['src/js/*.js'])
+    gulp.src(['src/js/**/*.js'])
         .pipe(concat('theme.js'))
         .pipe(gulp.dest('javascripts'))
 });
