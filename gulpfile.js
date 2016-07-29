@@ -17,14 +17,15 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('javascripts'))
 });
 
-gulp.task('livereload', ['styles', 'scripts'], function() {
+gulp.task('scripts-watch', ['scripts'], browserSync.reload);
 
+gulp.task('livereload', ['styles', 'scripts'], function() {
     browserSync.init({
         proxy: "http://127.0.0.1:8080/redmine/"
     });
 
     gulp.watch('src/scss/*.scss', ['styles']);
-    gulp.watch('src/js/*.js', ['scripts']).on('change', browserSync.reload);
+    gulp.watch('src/js/*.js', ['scripts']);
 });
 
 gulp.task('default', ['livereload'], function() {
