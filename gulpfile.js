@@ -8,6 +8,7 @@ gulp.task('styles', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('application.css'))
         .pipe(gulp.dest('stylesheets'))
+        .pipe(browserSync.stream())
 });
 
 gulp.task('scripts', function() {
@@ -22,7 +23,7 @@ gulp.task('livereload', ['styles', 'scripts'], function() {
         proxy: "http://127.0.0.1:8080/redmine/"
     });
 
-    gulp.watch('src/scss/*.scss').on('change', browserSync.reload);
+    gulp.watch('src/scss/*.scss', ['styles']);
 });
 
 gulp.task('default', ['livereload'], function() {
