@@ -1,12 +1,15 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 
 gulp.task('styles', function() {
     gulp.src(['src/scss/index.scss'])
         .pipe(sass().on('error', sass.logError))
-        .pipe(concat('application.css'))
+        .pipe(sourcemaps.init())
+            .pipe(concat('application.css'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('stylesheets'))
         .pipe(browserSync.stream())
 });
