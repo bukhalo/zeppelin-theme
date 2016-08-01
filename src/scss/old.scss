@@ -1,5 +1,3 @@
-@import url(../../../stylesheets/application.css);
-
 /* Circle Theme version 2.1.0, Copyright (C) 2011 - 2016 Kirill Bezrukov www.redminecrm.com */
 
 /**********************************************************/
@@ -33,12 +31,6 @@ a, a:link, a:visited {
 
 #main.nosidebar {
   background-color: #fff;
-}
-
-div#content {
-  margin-left: -20px;
-  padding-left: 25px;
-  padding-top: 15px;
 }
 
 #footer {
@@ -94,26 +86,6 @@ img.gravatar {
   background: #fff;
   vertical-align: middle;
   border-radius: 0;
-}
-
-/**********************************************************/
-/* HEADER */
-/**********************************************************/
-
-#header {
-  background-color: #29333a;
-  min-height: 5em;
-  padding: 0px;
-}
-
-#header > h1 {
-  font-family: "helvetica neue",helvetica,arial,sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 1px;
-  padding: 25px 10px 25px 70px;
-  margin: 0px;
 }
 
 #quick-search {
