@@ -1,21 +1,17 @@
 {
   "name": "zeppelin",
   "version": "1.0.0",
-  "description": "Zepplin theme for Redmine",
+  "description": "Zeppelin theme for Redmine",
   "main": "gulpfile.js",
-  "directories": {
-    "doc": "doc"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/shvind-co/zepplin.git"
+    "url": "git+ssh://git@bitbucket.org/shvind-co/zeppelin.git"
   },
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/shvind-co/zepplin#readme",
+  "author": "evilsprut",
+  "homepage": "https://bitbucket.org/shvind-co/zeppelin#readme",
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
