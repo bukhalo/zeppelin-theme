@@ -24,15 +24,11 @@ body {
   color: #3d454c;
   font-size: 14px;
   line-height: 1.3;
-  font-family: "helvetica neue",helvetica,arial,sans-serif;
-  font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 input, textarea, select {
-  font-family: "helvetica neue",helvetica,arial,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 12px;
 }
 
@@ -114,7 +110,7 @@ h2 {
 }
 
 #header > h1 {
-  font-family: "helvetica neue",helvetica,arial,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   text-transform: uppercase;
   font-weight: 700;
   font-size: 13px;
