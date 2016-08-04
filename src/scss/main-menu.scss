@@ -1,0 +1,81 @@
+#main-menu {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+
+  ul {
+
+  }
+
+  li {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  li > a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 0;
+    padding-right: 0;
+    color: #3c4146;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  li a:hover,
+  li a:focus {
+    color: #333;
+    background: none;
+  }
+
+  li a.selected,
+  li a.selected:hover {
+    background: none;
+    border-bottom: 3px solid #55a532;
+    color: #333;
+  }
+
+  li a.new-object {
+    background: none;
+  }
+
+  .menu-button {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    text-indent: 66em;
+    overflow: hidden;
+    cursor: pointer;
+    width: 24px;
+    height: 16px;
+    background: url(../images/menu_button.png) no-repeat;
+    background-size: 16px 16px; /* for retina displays */
+  }
+
+  .menu-button:hover {
+    background: url(../images/menu_button_hover.png) no-repeat;
+    background-size: 16px 16px; /* for retina displays */
+  }
+
+  .menu-children {
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+
+    li {
+
+      a {
+        color: #333;
+        background: none;
+
+        &:hover, &:focus {
+          color: #000;
+          background: none;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

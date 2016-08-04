@@ -1,0 +1,29 @@
+#top-menu {
+  height: 30px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #fafafa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+  // box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  color: #3c4146;
+  font-size: 12px;
+  font-weight: normal;
+
+  a {
+    margin-right: 15px;
+    color: #3c4146;
+    font-weight: normal;
+    line-height: 30px;
+
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+
+  #loggedas {
+    color: #55a532;
+  }
+}
