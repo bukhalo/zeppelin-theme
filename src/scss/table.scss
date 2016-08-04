@@ -1,0 +1,43 @@
+table.list {
+
+  thead {
+
+    th {
+      background-color: #f6f8f8;
+      border: none;
+      border-bottom: 1px solid #edf1f2;
+
+      a {
+        color: #333;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  tbody {
+
+    tr {
+
+      td {
+        padding: 8px 15px;
+        border: none;
+        font-size: 12px;
+        font-weight: normal;
+
+        a {
+          color: #333;
+          font-size: 12px;
+          font-weight: normal;
+        }
+      }
+
+      &:hover {
+
+        td {
+          border: none;
+        }
+      }
+    }
+  }
+}
