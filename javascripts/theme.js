@@ -1,3 +1,6 @@
+$( document ).ready(function() {
+    $('#main-menu').prependTo('#main');
+});
 if (window.jQuery) {
     $(window).load(function(){
         if (window.devicePixelRatio > 1) {
