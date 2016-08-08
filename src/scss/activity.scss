@@ -1,15 +1,44 @@
 div#activity {
 
   dl {
-    margin-bottom: 20px;
+    margin-left: 0;
+  }
+
+  dt {
+    margin-bottom: 0;
+    margin-left: 0;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 15px;
-    padding-left: 15px;
+    padding-left: 20px;
     background-color: #fff;
     border: 1px solid transparent;
     border-radius: 2px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  }
+
+  dd {
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    border-top: 1px solid #edf1f2;
+
+    span.description {
+      color: #333;
+      font-style: normal;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
   }
 }
