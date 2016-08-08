@@ -1,7 +1,7 @@
 function mainLayoutGenerate() {
-    $('#wrapper').addClass('app app-header-fixed app-aside-fixed');
+    $('#wrapper').addClass('app app-header-fixed app-aside-fixed').removeAttr('id');
     $('.app').append('<header id="header" class="app-header navbar" role="menu"></header>');
-    $('.app').append('<aside id="aside" class="app-aside hidden-xs bg-light"></aside>');
+    $('.app').append('<aside id="aside" class="app-aside hidden-xs bg-dark"></aside>');
     $('.app').append('<div id="content" class="app-content" role="main"></div>');
     $('.app').append('<footer id="footer" class="app-footer" role="footer"></footer>');
     $('.app').append('<div id="null" class="app-null"></div>');
@@ -11,32 +11,71 @@ function headerBrandGenerate() {
     $('header').append('<div class="navbar-header bg-dark"><a href="#" class="navbar-brand text-lt">Redmine</a></div>');
 }
 
-function headerNavigationGenerate() {
-    $('header').append('<div class="collapse pos-rlt navbar-collapse box-shadow bg-dark"></div>');
-    $('#top-menu > ul').prependTo('.navbar-collapse').addClass('nav navbar-nav hidden-xs');
-    $('#top-menu > #account > ul').prependTo('.navbar-collapse').addClass('nav navbar-nav navbar-right');
+function footerGenerate() {
+    $('.app-footer').prepend('<div class="wrapper b-t bg-light"></div>');
+    $('#wrapper2 #footer .bgl .bgr').appendTo('.app-footer .wrapper');
+}
 
-    // todo: move content from this container
-    $('#top-menu').remove();
+function headerNavigationGenerate() {
+    $('header').append('<div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only"></div>');
+    $('.navbar-collapse > .navbar-nav').prepend('<a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="app-aside-folded" target=".app"> <i class="fa fa-dedent fa-fw text"></i> <i class="fa fa-indent fa-fw text-active"></i> </a>');
+    $('#top-menu > #account > ul').prependTo('.navbar-collapse').addClass('nav navbar-nav navbar-right');
 }
 
 function asideMenuGenerate() {
-    $('.app-aside').append('<div class="navi-wrap"><nav class="navi clearfix"></nav></div>')
-    $('#main-menu > ul').appendTo('.navi-wrap .navi').addClass('nav');
+
+    // markup aside
+    $('.app-aside').append('<div class="navi-wrap"><nav class="navi clearfix"></nav></div>');
+
+    // ================
+    // === top menu ===
+    // ================
+
+    // move to aside
+    $('#top-menu > ul').prependTo('.navi-wrap .navi').addClass('nav nav-main');
+
+    // add title
+    $('.nav-main').prepend('<li class="hidden-folded padder m-t m-b-sm text-muted text-xs"><span>Main navigation</span></li>');
+
+    // wrap text into span
+    $('.nav-main li a').each( function() {
+        $(this).wrapInner('<span class="font-bold"></span>');
+    });
+
+    // add icons
+    $('.nav-main .home').append('<i class="glyphicon glyphicon-home text-success-lter"></i>');
+    $('.nav-main .my-page').append('<i class="glyphicon glyphicon-user"></i>');
+    $('.nav-main .projects').append('<i class="glyphicon glyphicon-th"></i>');
+    $('.nav-main .administration').append('<i class="glyphicon glyphicon-tower"></i>');
+    $('.nav-main .help').append('<i class="glyphicon glyphicon-question-sign"></i>');
+
+    // ====================
+    // === project menu ===
+    // ====================
+
+    // move project menu to aside
+    $('#main-menu > ul').appendTo('.navi-wrap .navi').addClass('nav nav-project');
+
+    // add title to project menu
+    $('.nav-project').prepend('<li class="line dk"></li><li class="hidden-folded padder m-t m-b-sm text-muted text-xs"><span>Project</span></li>');
+
+    // todo: move content from this container
+    $('#top-menu').remove();
+
     $('#main-menu').remove();
-    $('.navi .menu-children').addClass('nav nav-sub dk');
+
+    // dropdown menu for new actions in project
+    $('.navi .menu-children').addClass('nav nav-sub dk').removeClass('menu-children');
     $('.navi .new-object').click(function() {
         $(this).parent().toggleClass('active');
     });
-}
 
-function asideMenuStylish() {
-    // wrap links text into span
-    $('.navi .nav li a').each( function() {
+    // wrap text into span
+    $('.nav-project li a').each( function() {
         $(this).wrapInner('<span></span>');
     });
 
-    // add icon for menu items
+    // add icons
     $('.navi .nav .overview').append('<i class="icon-home"></i>').removeClass('overview');
     $('.navi .nav .activity').append('<i class="icon-feed"></i>').removeClass('activity');
     $('.navi .nav .roadmap').append('<i class="icon-map"></i>').removeClass('roadmap');
@@ -49,6 +88,8 @@ function asideMenuStylish() {
     $('.navi .nav .files').append('<i class="icon-folder-alt"></i>').removeClass('files');
     $('.navi .nav .settings').append('<i class="icon-settings"></i>').removeClass('settings');
 }
+
+function asideMenuStylish() {}
 
 function contextMenuStylish() {
     $('#content .contextual a').addClass('btn btn-default btn-sm btn-addon');
@@ -88,13 +129,15 @@ $( document ).ready(function() {
     asideMenuStylish();
     contextMenuStylish();
     moveTitleToHeader();
+    footerGenerate();
 
 
-    $('.app-content').append('<div class="app-content-body"><div class="wrapper-md"></div></div>');
+    $('.app-content').append('<div class="app-content-body"><div class="hbox hbox-auto-xs hbox-auto-sm"><div class="col col-content"></div><div class="col col-sidebar w-md bg-white-only b-l bg-auto no-border-xs"></div></div></div>');
+    $('#content').appendTo('.col-content').removeAttr('id');
+    $('#sidebar').appendTo('.col-sidebar').removeAttr('id');
 
-
-
-    $('#wrapper2').appendTo('.app-content-body > .wrapper-md');
+    $('#wrapper2').appendTo('.app-null');
+    $('.app-null').hide();
 
     $('#content .box').addClass('panel panel-default').removeClass('box');
     $('#content .panel legend').replaceWith(function() {
@@ -103,7 +146,7 @@ $( document ).ready(function() {
 
     // === Content ====
     // create wrapper for content title
-    $('#content').prepend('<div class="content-header bg-light lter b-b wrapper-md ng-scope"></div>');
+    $('.col-content').prepend('<div class="content-header bg-light lter b-b wrapper-md ng-scope"></div>');
 
     // move title into content header
     $('#content h2').prependTo('.content-header');
@@ -121,5 +164,4 @@ $( document ).ready(function() {
     $('#history h3').addClass('m-t-lg m-b');
 
     // footer
-    $('#wrapper2 #footer').appendTo('.app-footer');
 });

@@ -88,8 +88,6 @@ pre, code {font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;}
 #admin-menu a.info { background-image: url(../images/help.png); }
 #admin-menu a.server_authentication { background-image: url(../images/server_key.png); }
 
-#main {background-color:#EEEEEE;}
-
 #sidebar{ float: right; width: 22%; position: relative; z-index: 9; padding: 0; margin: 0;}
 * html #sidebar{ width: 22%; }
 #sidebar h3{ font-size: 14px; margin-top:14px; color: #666;  }
@@ -100,9 +98,6 @@ pre, code {font-family: Consolas, Menlo, "Liberation Mono", Courier, monospace;}
 #sidebar ul li, ul.flat li {list-style-type:none;margin: 0px 2px 0px 0px; padding: 0px 0px 0px 0px;}
 #sidebar div.wiki ul {margin:inherit; padding-left:40px;}
 #sidebar div.wiki ul li {list-style-type:inherit;}
-
-#main.nosidebar #sidebar{ display: none; }
-#main.nosidebar #content{ width: auto; border-right: 0; }
 
 #footer {clear: both; border-top: 1px solid #bbb; font-size: 0.9em; color: #aaa; padding: 5px; text-align:center; background:#fff;}
 
